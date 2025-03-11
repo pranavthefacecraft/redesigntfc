@@ -1,0 +1,39 @@
+{
+  "name": "threejs-journey-exercise",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3",
+    "jeasings": "^0.0.16",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "vite": "^6.2.0",
+    "vite-plugin-restart": "^0.4.1"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^9.108.1",
+    "@react-three/fiber": "^8.16.8",
+    "@react-three/postprocessing": "2.16",
+    "@tailwindcss/vite": "^4.0.3",
+    "gsap": "^3.12.7",
+    "leva": "0.9.34",
+    "postprocessing": "6.35",
+    "r3f-perf": "^7.2.1",
+    "react": "18.3",
+    "react-before-after-slider-component": "^1.1.8",
+    "react-dom": "18.3",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.1.5",
+    "split-type": "^0.3.4",
+    "swiper": "^11.2.2",
+    "tailwindcss": "^4.0.3",
+    "three": "^0.166.1",
+    "three-stdlib": "^2.35.13"
+  }
+}

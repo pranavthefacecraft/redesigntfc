@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Futura";
+  src: url("/Fonts/Futura-Medium-01.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
+
+@theme {
+  --color-customred: #bf1736;
+  --color-custompurple: #b1acf5;
+}
+
+.font-secondary {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-futura-PT-Light {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.Futura-PT-Light-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.Futura-PT-Book {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Futura-PT-Book-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.Futura-PT-Medium {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.Futura-PT-Medium-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.Futura-PT-Demi {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.Futura-PT-Demi-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.Futura-PT-Heavy {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.Futura-PT-Heavy-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.Futura-PT-Extra-Bold {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.Futura-PT-Extra-Bold-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.Futura-PT-Bold {
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.Futura-PT-Bold-Oblique {
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+#root {
+  filter: unset !important;
+}
+
+
