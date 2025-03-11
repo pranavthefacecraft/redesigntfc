@@ -1,0 +1,105 @@
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 1); /* Semi-transparent background */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ensure the header is above other elements */
+}
+
+.logo {
+  position: relative;
+  width: 200px;
+  height: 23px;
+}
+
+.logo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu-modal {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the modal is above other elements */
+  transition: top 0.5s ease-in-out;
+}
+
+.menu-modal.open {
+  top: 0;
+}
+
+.close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.menu-content {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.menu-items {
+  flex: 1;
+  color: #fff;
+}
+
+.menu-items ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-items li {
+  margin: 1rem 0;
+  font-family: "futura-pt", sans-serif;
+  font-size: 5rem; /* Tailwind CSS text-2xl */
+
+  font-weight: 700;
+  color: #e3342f; /* Tailwind CSS text-customred */
+}
+
+.menu-items a {
+  color: #fff;
+  
+  text-decoration: none;
+}
+
+.menu-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-images img {
+  max-width: 100%;
+  max-height: 100%;
+}
