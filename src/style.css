@@ -104,4 +104,131 @@
   filter: unset !important;
 }
 
+@font-face {
+  font-family: "Monserrat";
+  src: url("../public/ProjectPage/Fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../public/ProjectPage/Fonts/FuturaCyrillicDemi.ttf");
+}
+
+
+
+html,
+body,
+#root
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body
+{
+  background-image: url('../public/Homepage/Images/BG-new.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#intro
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#exit
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#phonebackground
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: #b1acf5;
+  opacity: 0;
+}
+
+/* Center the ProjectTitle div */
+.ProjectTitle {
+  position: absolute;
+  color: antiquewhite;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 0.5em;
+  font-size: 15rem;
+  letter-spacing: -0.05em;
+  font-family: Futura;
+  opacity: 1; 
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Style for each letter */
+.ProjectTitle span {
+  display: inline-block;
+  opacity: 0; 
+  transform: translateY(20px); 
+}
+
+
+/* Onclick transition box */
+.AboutusPagebox {
+  z-index: 1;
+  position: absolute;
+  top: 18.9em;
+  left: 46.5em;
+  perspective: 10000px;
+  width: 152px;
+  height: 152px;
+  background-color: rgba(90, 90, 255, 0.9);
+  transform: rotateY(-40deg) rotateX(20deg) rotateZ(-5deg);
+  opacity: 0;
+}
+
+
+
+
+
+/* ScrollBar */
+
+*::-webkit-scrollbar {
+  width: 0.5vw; 
+  height: 100vh; 
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 1em; 
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #b1acf5; 
+  border-radius: 1em; 
+  border: 1.5px solid #f1f1f1; 
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent; 
+}
+
 
