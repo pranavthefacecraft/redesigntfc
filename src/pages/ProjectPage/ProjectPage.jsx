@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'; // Import motion from framer-motion
 import { Canvas } from "@react-three/fiber";
-import { Cube } from "../HomePage/HomePageCube";
+import { Cube } from '../../HomePage/HomePageCube'
 
 export default function ProjectPage() {
 

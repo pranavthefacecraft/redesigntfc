@@ -1,4 +1,4 @@
-import "./style.css";
+import './style.css'
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,22 +10,24 @@ import { EffectComposer } from "@react-three/postprocessing";
 import gsap from "gsap";
 
 // Pages
-import Home from "./pages/home/Home.jsx";
 import Solit from "./pages/solit/Solit.jsx";
 import Tanda from "./pages/Tanda/Tanda.jsx";
 import HomePage from "./HomePage/HomePage";
-import ProjectPage from "./ProjectPage/ProjectPage";
-import AboutusPage from "./AboutusPage/AboutusPage";
+import ProjectPage from './pages/ProjectPage/ProjectPage.jsx'
+import AboutusPage from "./pages/AboutusPage/AboutusPage.jsx";
 
 // 3D Components
-import { Cube } from "./HomePage/HomePageCube";
-import Rubix from "./HomePage/HomePageRubix";
-import { Le } from "./HomePage/HomePageRubixtwo";
-import { Phone } from "./AboutusPage/Phone";
+import { Le } from "./HomePage/HomePageRubixtwo.jsx";
+import { Phone } from "./pages/AboutusPage/Phone.jsx";
 import { BuildBrands } from "./HomePage/BuildBrands";
 
+// Create a new div for the canvas
+const canvasContainer = document.createElement("div");
+canvasContainer.className = "canvas";
+document.body.appendChild(canvasContainer);
+
 // Root element
-const root = ReactDOM.createRoot(document.querySelector("#root"));
+const root = ReactDOM.createRoot(canvasContainer);
 
 // MainpageWithRouting Component
 function MainpageWithRouting() {
@@ -80,27 +82,18 @@ function MainpageWithRouting() {
         dpr={[1, 2]}
       >
         <EffectComposer sampling={64}>
-          
           <ambientLight intensity={3.5} />
 
-          <Suspense fallback={null}>
-            {/* <Cube isClicked={isCubeClicked} onClick={handleCubeClick} /> */}
-            {/* <Rubix/> */}
-          </Suspense>
-
           <ScrollControls pages={1.0} damping={3.0} smoothTime={0.35}>
+            <Suspense fallback={null}>
+             <Le isClicked={isCubeClicked} visible={!isPhoneClicked} onClick={handleCubeClick} />
+             <Phone isPhoneClicked={isPhoneClicked} visible={!isCubeClicked} onClick={handlePhoneClick} />
+            </Suspense>
             <HomePage />
-            {/* <Rubix isCubeClicked={isCubeClicked} onClick={handleCubeClick} /> */}
-            <Le isClicked={isCubeClicked} visible={!isPhoneClicked} onClick={handleCubeClick} />
-            <Phone isPhoneClicked={isPhoneClicked} visible={!isCubeClicked} onClick={handlePhoneClick} />
-            {/* <Phone visible={!isCubeClicked}  /> */}
+            <BuildBrands visible={!isCubeClicked && !isPhoneClicked} />
           </ScrollControls>
-
-          <BuildBrands visible={!isCubeClicked && !isPhoneClicked} />
         </EffectComposer>
       </Canvas>
-
-      
     </>
   );
 }
@@ -119,6 +112,7 @@ function App() {
             element={
               <motion.div
                 id="exit"
+                className="fixed top-0 left-0 w-full h-full z-[-1]"
                 initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}

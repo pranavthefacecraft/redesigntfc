@@ -38,7 +38,7 @@ export function Planefour() {
   return (
     <>
       <ambientLight />
-      <mesh position={[0, -height * 5.27, 0]}>
+      <mesh position={[0, -height * 5.4, 0]}>
         <planeGeometry args={[width, height]} />
         <gradientMaterial />
       </mesh>
@@ -133,35 +133,3 @@ export function Planehero() {
   );
 }
 
-export function Videos() {
-  const { width, height } = useThree((state) => state.viewport);
-  const data = useScroll();
-  const group = useRef();
-  const targetScale = useRef(1); // Target scale for smooth interpolation
-
-  useFrame(() => {
-    const videoElement = document.querySelector('.tanda-video');
-    if (videoElement) {
-      videoElement.style.transformOrigin = 'center center';
-
-      // Get the scroll range
-      const scrollRange = data.range(1 / 2, 1 / 4);
-
-      // Determine the target scale based on scroll range
-      if (scrollRange > 1 / 1.5) {
-        targetScale.current = 1; // Target original size
-      } else {
-        targetScale.current = 1 - scrollRange / 2; // Scale down
-      }
-
-      // Smoothly interpolate the current scale towards the target scale
-      const currentScale = parseFloat(videoElement.style.transform.replace('scale(', '').replace(')', '')) || 1;
-      const smoothScale = currentScale + (targetScale.current - currentScale) * 0.04; // Adjust 0.1 for smoother/faster transition
-
-      // Apply the smooth scale
-      videoElement.style.transform = `scale(${smoothScale})`;
-    }
-  });
-
-  return null;
-}

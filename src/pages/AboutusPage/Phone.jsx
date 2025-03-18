@@ -4,7 +4,7 @@ import { useThree } from '@react-three/fiber';
 import { useGLTF, useScroll, MeshPortalMaterial } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import gsap from 'gsap';
-import { DissolveMaterial } from '../DissolveMaterial';
+import { DissolveMaterial } from '../../DissolveMaterial';
 
 import AboutusPortal from './AboutusPortal';
 
