@@ -81,7 +81,7 @@ const Tanda = () => {
 
           <Display>
             <div
-              id="main-image"
+              id="main-image-tanda"
               className="parallax pointer-events-none h-full w-full"
             ></div>
           </Display>

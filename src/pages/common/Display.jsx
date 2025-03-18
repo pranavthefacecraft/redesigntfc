@@ -1,6 +1,6 @@
 const Display = ({ children }) => {
   return (
-    <div className="relative flex h-102 w-full items-center justify-center overflow-hidden rounded-2xl shadow-xs lg:h-[540px] xl:h-[720px]">
+    <div className="relative flex h-102 w-full items-center justify-center overflow-hidden rounded-2xl lg:h-[540px] xl:h-[720px]">
       {children}
     </div>
   );
