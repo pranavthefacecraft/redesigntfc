@@ -13,7 +13,7 @@ const Image = ({ path, classes }) => {
 
 const RowDisplay = ({ image1, image2, classes }) => {
   return (
-    <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
+    <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16 border-red-600">
       <Image path={image1} classes={classes} />
 
       <Image path={image2} classes={classes} />

@@ -1,4 +1,8 @@
-#main-image {
+body{
+  background-color: #fff;
+  background-image: none;
+}
+#main-image-solit {
   background-image: url("solit/main.jpg");
 }
 

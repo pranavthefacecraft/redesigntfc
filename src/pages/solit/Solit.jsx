@@ -67,14 +67,14 @@ const Solit = () => {
         </div>
 
         {/* First container */}
-        <div className=" pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-32">
+        <div className=" pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-20">
           <PageBreadcrumbs/>
 
           <ProjectTag />
 
           <Display>
             <div
-              id="main-image"
+              id="main-image-solit"
               className="parallax pointer-events-none h-full w-full"
             ></div>
           </Display>
@@ -84,7 +84,7 @@ const Solit = () => {
           <MainText />
 
           <Display>
-            <div className="solit-el-1 h-full w-full">
+            <div className="solit-el-1 h-full w-full z-1000">
               <Video />
             </div>
           </Display>
