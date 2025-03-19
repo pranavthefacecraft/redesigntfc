@@ -5,8 +5,9 @@ import Section from "../common/Section.jsx";
 import RowDisplay from "../common/RowDisplay.jsx";
 import Separator from "../common/Separator.jsx";
 import Title from "../common/Title.jsx";
-import PageHeader from "./PageHeader.jsx";
-import ProjectTag from "./ProjectTag.jsx";
+import PageHeader from "../common/PageHeader.jsx";
+import PageBreadcrumbs from "./PageBreadcrumbs.jsx";
+import ProjectTag from "./ProjectTagTanda.jsx";
 import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
@@ -58,6 +59,7 @@ const Tanda = () => {
 
   return (
     <>
+    <PageHeader />
       <div ref={container} className="w-full overflow-hidden">
         <div className="absolute top-0 left-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh]">
           <div className="absolute inset-0 opacity-100">
@@ -74,14 +76,14 @@ const Tanda = () => {
         </div>
 
         {/* First container */}
-        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-32">
-          <PageHeader />
+        <div className=" pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-20">
+        <PageBreadcrumbs/>
 
           <ProjectTag />
 
           <Display>
             <div
-              id="main-image"
+              id="main-image-tanda"
               className="parallax pointer-events-none h-full w-full"
             ></div>
           </Display>
@@ -243,15 +245,7 @@ services simply and engagingly. The challenge was to balance simplicity and deta
 
           <MoreProjects />
 
-          <RowDisplay classes="solit-el-1">
-            <BackgroundImageWithVideos
-              backgroundImage="tanda/tab-bg-v2.png"
-              videos={[
-                "tanda/tanda_r4_subtitles_sfx.mp4",
-                "tanda/tanda_r4_subtitles_sfx.mp4video2.mp4",
-              ]} // Add your video sources here
-            />
-          </RowDisplay>
+          
         </div>
       </div>
 

@@ -14,7 +14,7 @@ const Slide = ({ image }) => {
 
 const Slider = () => {
   return (
-    <div className="solit-el-1 absolute inset-0 flex items-center justify-center bg-black">
+    <div className="solit-el-1 h-full absolute inset-0 flex items-center justify-center bg-black z-1000">
       <img
         src="solit/slider-bg.jpg"
         className="pointer-events-none absolute bottom-0 left-0 h-full w-full object-cover select-none"

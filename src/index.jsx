@@ -12,6 +12,7 @@ import gsap from "gsap";
 // Pages
 import Solit from "./pages/solit/Solit.jsx";
 import Tanda from "./pages/Tanda/Tanda.jsx";
+import Rafw from "./pages/rafw/Rafw.jsx";
 import HomePage from "./HomePage/HomePage";
 import ProjectPage from './pages/ProjectPage/ProjectPage.jsx'
 import AboutusPage from "./pages/AboutusPage/AboutusPage.jsx";
@@ -145,6 +146,7 @@ function App() {
           {/* Additional routes */}
           <Route path="/solit" element={<Solit />} />
           <Route path="/Tanda" element={<Tanda />} />
+          <Route path="/Rafw" element={<Rafw />} />
         </Routes>
       </AnimatePresence>
     </>

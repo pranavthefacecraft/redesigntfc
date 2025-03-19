@@ -100,7 +100,7 @@ const SketchFinal = () => {
 
   return (
     <div
-      className="solit-el-1 absolute inset-0 container mx-auto"
+      className="solit-el-1 absolute inset-0 container mx-auto z-1000 h-full"
       ref={container}
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
@@ -125,7 +125,7 @@ const SketchFinal = () => {
       {/* Line */}
       <div
         ref={line}
-        className="absolute top-0 bottom-0 left-1/2 z-[100] w-1 -translate-x-1/2 bg-red-400"
+        className="absolute top-0 bottom-0 left-1/2 z-[1000] w-1 -translate-x-1/2 bg-red-400"
       >
         <div
           ref={carets}

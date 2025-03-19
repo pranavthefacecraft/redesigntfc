@@ -1,21 +1,18 @@
-
-
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 1); /* Semi-transparent background */
+  padding: 2.4rem 1rem;
+  background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000; /* Ensure the header is above other elements */
+  z-index: 10; /* Ensure the header is above other elements */
 }
 
 .logo {
   position: relative;
-  width: 200px;
+  width: 210px;
   height: 23px;
 }
 
@@ -26,31 +23,33 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  transition: opacity 2s ease-in-out; /* Adjust the duration as needed */
 }
 
-.menu-icon {
-  font-size: 2rem;
-  cursor: pointer;
+.logo img.fade-out {
+  opacity: 0;
 }
 
 .menu-modal {
   position: fixed;
-  top: -100%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  /* background-color: rgba(0, 0, 0, 0.9); */
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 1000; /* Ensure the modal is above other elements */
-  transition: top 0.5s ease-in-out;
+  opacity: 0;
+  /* transition: opacity 0.5s ease 1s; */
 }
 
-.menu-modal.open {
-  top: 0;
-}
+/* .menu-modal.open {
+  opacity: 1;
+} */
 
 .close-icon {
   position: absolute;
@@ -88,7 +87,7 @@
 
 .menu-items a {
   color: #fff;
-  
+
   text-decoration: none;
 }
 
@@ -102,4 +101,73 @@
 .menu-images img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.cube {
+  position: relative;
+  width: 206px;
+  margin: 0px auto;
+  margin-top: 0px;
+  min-height: 91px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.square,
+.square2,
+.square3 {
+  width: 40px;
+  height: 40px;
+  background: #c5232800;
+  border: solid 2px #666699;
+  float: left;
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+}
+
+.square {
+  top: 36px;
+  right: 44px;
+  transform: skew(180deg, 210deg);
+}
+
+.square2 {
+  top: 35px;
+  right: 3px;
+  transform: skew(180deg, 150deg);
+}
+
+.square3 {
+  width: 48px;
+  height: 40px;
+  top: 8px;
+  right: 62px;
+  transform: rotate(150deg) translate(-40px, -16px) skew(30deg, 0deg);
+}
+
+.cube.rotate-menu {
+  transform: rotateY(-90deg);
+}
+
+.cube.rotate-close {
+  transform: rotateY(0deg);
+}
+
+.cube.hover-menu .square,
+.cube.hover-menu .square3 {
+  display: none;
+}
+
+.cube.hover-menu .square2 {
+  width: 48px;
+  height: 48px;
+  transform: none;
+  top: 0;
+  right: 0;
+  background: #66669900;
+  border: solid 2px #666699;
+  transition:
+    width 0s ease,
+    height 0.5s ease;
 }
