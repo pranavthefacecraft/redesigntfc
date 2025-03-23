@@ -13,7 +13,7 @@ export function BuildBrands({ visible, ...props }) {
 
   const black = new THREE.MeshToonMaterial({color: '#000000'});
   const lightpurple = new THREE.MeshBasicMaterial({color: '#bf1736'});
-  const white = new THREE.MeshToonMaterial({color: '#ffffff'});
+  const white = new THREE.MeshBasicMaterial({color: '#ffffff'});
   const darkpurple = new THREE.MeshBasicMaterial({color: '#910a00'})
 
   // BreakPoint Conditions
@@ -49,6 +49,7 @@ export function BuildBrands({ visible, ...props }) {
     ]}
     
     >
+    
     <group name="Text"
     >
       <mesh

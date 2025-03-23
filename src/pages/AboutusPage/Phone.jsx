@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 import gsap from 'gsap';
 import { DissolveMaterial } from '../../DissolveMaterial';
 
-import AboutusPortal from './AboutusPortal';
+import AboutusPortal from './Portal/AboutusPortal';
 
 export function Phone({ visible, ...props }) {
   const group = useRef()
@@ -22,7 +22,7 @@ export function Phone({ visible, ...props }) {
   const isClicked = props.isPhoneClicked
 
   // Define materials
-  const greyscreen = new THREE.MeshBasicMaterial({ color: '#848494' });
+  const greyscreen = new THREE.MeshBasicMaterial({ color: '#4D55CC' });
   const button = new THREE.MeshBasicMaterial({ color: '#848494' });
   const lightpurple = new THREE.MeshBasicMaterial({ color: '#bcb4ff' });
   const darkpurple = new THREE.MeshBasicMaterial({ color: '#8278fb' });
@@ -127,7 +127,7 @@ export function Phone({ visible, ...props }) {
       group.current.scale,
       {
         x: 0.45,
-        y: 0.39,
+        y: 0.37,
         z: 0.7,
         duration: 0.1,
         ease: 'back.out',
