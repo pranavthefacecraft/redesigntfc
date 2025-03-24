@@ -8,7 +8,7 @@ import { Planefour, Planefive, Planehero } from './ThreeDComponents';
 import ImageSlider from './ImageSlider';
 
 import Scene from './ModelSlider';
-
+import PageFooter from '../rafw/PageFooter';
 
 const texts = [
   { first: "Digital Branding", second: "Agency" },
@@ -161,14 +161,12 @@ export default function AboutusPage() {
 
               <Scroll>
      
-
                 <Scene/>
               
-  
               </Scroll>
-
               
             </ScrollControls>
+           
           </Canvas>
         </Suspense>
       </div>

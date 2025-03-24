@@ -45,7 +45,7 @@ export function HomeIsland({ visible, ...props }) {
           z: 2.5,
           duration: 2.5,
           delay: 3.0,
-          ease: 'back.in',
+          ease: 'back.inOut',
           onComplete: () => {
             gsap.to(group.current.position, {
                 y: '+=0.1',
