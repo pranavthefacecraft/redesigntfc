@@ -1,6 +1,6 @@
 import "./Rafw.css";
 import Display from "../common/Display.jsx";
-import DisplayVideo from "../common/DisplayVideo.jsx";  // Add this import
+import DisplayVideo from "../common/DisplayVideo.jsx"; // Add this import
 import Text from "../common/Text.jsx";
 import Section from "../common/Section.jsx";
 import RowDisplay from "../common/RowDisplay.jsx";
@@ -22,7 +22,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import GridDistortion from "../common/GridDistortion.jsx";
-
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -53,9 +52,9 @@ const Solit = () => {
 
   return (
     <>
-    <PageHeader />
+      <PageHeader />
       <div ref={container} className="w-full overflow-hidden bg-black">
-        <div className="absolute top-0 left-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh] z-0">
+        <div className="absolute top-0 left-0 z-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh]">
           <div className="absolute inset-0 opacity-100">
             <GridDistortion
               // imageSrc="https://picsum.photos/1920/1080?grayscale"
@@ -70,15 +69,15 @@ const Solit = () => {
         </div>
 
         {/* First container */}
-        <div className=" pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-20">
-          <PageBreadcrumbs/>
+        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-20">
+          <PageBreadcrumbs />
 
           <ProjectTag />
 
           <Display>
             <div
               id="main-image-rafw"
-              className=" pointer-events-none h-full w-full object-cover"
+              className="pointer-events-none h-full w-full object-cover"
             ></div>
           </Display>
         </div>
@@ -87,7 +86,7 @@ const Solit = () => {
           <MainText />
 
           <Display>
-            <div className="solit-el-1 h-full w-full z-1000">
+            <div className="solit-el-1 z-1000 h-full w-full">
               <Video />
             </div>
           </Display>
@@ -96,22 +95,26 @@ const Solit = () => {
             title={{
               content: "Challenge",
               size: "md",
+              color: "#ffffff",
             }}
             text="We promoted Solit Hub's location in the quieter subur ob Littau, Luzern through creative visuals, engaging the young demographic, and showcasting Littau as part of Luzern to enhance brand awareness in a competitive co-working space market."
             expanded={false}
+            textColor="white"
           />
 
           <Section
             title={{
               content: "Results",
               size: "md",
+              color: "#ffffff",
             }}
             text="We improved the brand's digital presence through an integrated approach, including targeted social media campaigns and engaging video content. This resonated well with young, creative businesses, resulting in positive client feedback. The project demonstrates the impact of a well-crafted digital strategy on a brand's image and market position."
             expanded={false}
+            textColor="white"
           />
         </div>
-        <div className="z-2000 container-full mx-auto flex flex-col items-center">
-        <Idea />
+        <div className="container-full z-2000 mx-auto flex flex-col items-center">
+          <Idea />
         </div>
 
         {/* Second container */}
@@ -120,9 +123,11 @@ const Solit = () => {
             title={{
               content: "Idea to creation",
               size: "md",
+              color: "#ffffff",
             }}
             text="We created a 20-second brand awareness video, designed to be easily adaptable for social media platforms. The video effectively encapsulates Solit Hub’s brand message and identity, making it a versatile tool for Various digital channels. The brand identity reflects the slogan ‘Create at Solit, Thrive in Luzern’."
             expanded={false}
+            textColor="white"
           />
 
           {/* Slider */}
@@ -130,41 +135,64 @@ const Solit = () => {
             <Slider />
           </DisplayVideo>
 
-          <RowDisplayRafw
-            image1="solit/row1.jpg"
-            image2="rafw/phone.png"
-            classes="solit-el-1"
-          />
+          <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
+            {/* Image1 */}
+
+            {/* Image2 */}
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
+              <div className="h-full border bg-[#c09c45] p-20">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="top-0 left-0 w-auto rounded-3xl"
+                  src="rafw/menu.mp4"
+                  type="video/mp4"
+                ></video>
+              </div>
+            </div>
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
+              <img
+                src="rafw/phone.png"
+                className="object-fit absolute top-0 left-0 h-full w-full"
+              />
+            </div>
+          </div>
 
           <Section
+            className="text-white"
             title={{
-              content: "Social Media, Visual Content",
+              content: "How FaceCraft transformed online presence.",
               size: "md",
+              color: "#ffffff",
             }}
             text="To boost engagement and create a fresh, youthful brand character, we produced six short video posts for social media. These videos featured people answering questions about what Solit means to them, adding an element of fun and personal connection to the brand. This approach not only heightens engagement but also aligns perfectly with the target market of young creative businesses."
+            textColor="white"
           />
+          <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
+            {/* Image1 */}
 
-          <RowDisplay
-            image1="solit/row3.jpg"
-            image2="solit/row4.jpg"
-            classes="solit-el-1"
-          />
+            {/* Image2 */}
+            <div className="relative aspect-[4/5] h-[880px] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
+              <div className="">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="top-0 left-0 w-auto rounded-3xl"
+                  src="rafw/phone-video.mp4"
+                  type="video/mp4"
+                ></video>
+              </div>
+            </div>
+            
+          </div>
 
-          <RowDisplay
-            image1="solit/row5.jpg"
-            image2="solit/row6.jpg"
-            classes="solit-el-1"
-          />
+         
 
-          <Section
-            title={{
-              content: "Design System",
-              size: "md",
-            }}
-            text="The favicon we created encapsulates the brand’s identity. By incorporating the green color from the palette white color from the logo, and the customized typeface from the Visby font (used in the logo); the favicon serves as a miniature representation of the brand’s visual language. The elements support brand recognition. "
-          />
-
-          
+         
 
           <Display>
             <img
@@ -172,8 +200,8 @@ const Solit = () => {
               className="solit-el-1 absolute top-0 left-0 h-full w-full object-cover"
             />
 
-            <div className="absolute inset-0 z-50 flex flex-col items-center justify-between p-8 lg:items-start lg:justify-center md:p-20 lg:p-16 xl:p-24">
-              <h3 className="Futura-PT-Bold text-center text-white text-5xl md:text-6xl lg:text-left lg:text-8xl xl:w-2/3 xl:text-9xl 2xl:text-9xl">
+            <div className="absolute inset-0 z-50 flex flex-col items-center justify-between p-8 md:p-20 lg:items-start lg:justify-center lg:p-16 xl:p-24">
+              <h3 className="Futura-PT-Bold text-center text-5xl text-white md:text-6xl lg:text-left lg:text-8xl xl:w-2/3 xl:text-9xl 2xl:text-9xl">
                 Are you ready to transform your brand?
               </h3>
 
@@ -186,8 +214,6 @@ const Solit = () => {
           <Title content="Explore more projects" size="md" centered />
 
           <MoreProjects />
-
-          
         </div>
       </div>
 
