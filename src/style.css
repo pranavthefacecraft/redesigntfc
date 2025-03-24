@@ -104,8 +104,7 @@
   filter: unset !important;
 }
 
-body
-{
+#exit{
   background-image: url('../public/Homepage/Images/BG-new.png');
   background-repeat: no-repeat;
   background-size: cover;

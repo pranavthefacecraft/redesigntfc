@@ -38,8 +38,8 @@ export function Planefour() {
   return (
     <>
       <ambientLight />
-      <mesh position={[0, -height * 5.4, 0]}>
-        <planeGeometry args={[width, height]} />
+      <mesh position={[0, -height * 5.4, -40]}>
+        <planeGeometry args={[width * 3, height * 3]} />
         <gradientMaterial />
       </mesh>
     </>
@@ -94,10 +94,8 @@ export function Planefive() {
 // Gradient Material for Planehero
 const GradientMaterialhero = shaderMaterial(
   { 
-    uColorCenter: new THREE.Color("#cbc7fe"), // Soft pastel purple (center)
-    uColorEdge: new THREE.Color("#a9a0ff") // Light bluish purple (edges)
+    uColorEdge: new THREE.Color("#a9a0ff") 
   },
-  // Vertex Shader
   /*glsl*/`
     varying vec2 vUv;
     void main() {
@@ -105,10 +103,7 @@ const GradientMaterialhero = shaderMaterial(
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
     }
   `, 
-  // Fragment Shader (Radial Gradient)
   /*glsl*/`
-    varying vec2 vUv;
-    uniform vec3 uColorCenter;
     uniform vec3 uColorEdge;
 
     void main() {

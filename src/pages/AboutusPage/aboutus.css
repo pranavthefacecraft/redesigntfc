@@ -1,12 +1,12 @@
 @font-face {
     font-family: "Futura";
-    src: url("../public/ProjectPage/Fonts/FuturaCyrillicDemi.ttf"); /* Fix the path */
+    src: url("../../../public/ProjectPage/Fonts/FuturaCyrillicDemi.ttf"); /* Fix the path */
 }
 
 
 @font-face {
     font-family: "Monserrat";
-    src: url("../public/ProjectPage/Fonts/Montserrat-Medium.ttf"); /* Fix the path */
+    src: url("../../../public/ProjectPage/Fonts/Montserrat-Medium.ttf"); /* Fix the path */
 }
 
 
@@ -32,25 +32,46 @@
     letter-spacing: -0.02em;
 }
 
-
-#intro
+#aboutintro
 {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+} 
+
+.my-text-one{
+    
+  font-size: 4rem;
+  font-family: Futura;
+  line-height: 1.2em;
+  text-align: left;  
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-#exit
-{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+.my-text-two{
+    font-size: 4rem;
+    font-family: Futura;
+    line-height: 1.2em;
+    text-align: left;  
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+.my-text-three{
+    font-size: 4rem;
+    font-family: Futura;
+    line-height: 1.2em;
+    text-align: left;  
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+   
+
+
+.char {
+  opacity: 0;
+}
+
 
 
 
