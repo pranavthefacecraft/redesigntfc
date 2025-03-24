@@ -26,6 +26,8 @@ import { HomeIsland } from "./pages/ServicePage/HomeIsland.jsx"
 
 // Root element
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const aboutTooltip = document.getElementById("about-tooltip");
+const serviceTooltip = document.getElementById("services-tooltip");
 
 
 // MainpageWithRouting Component
@@ -57,10 +59,53 @@ function MainpageWithRouting() {
     e.stopPropagation();
     setIsIslandClicked(true);
 
-    // setTimeout(() => {
-    //   navigate("/ServicePage");
-    // }, 10000);
+    setTimeout(() => {
+      navigate("/ServicePage");
+    }, 10000);
   };
+
+  // Handle Phone tooltip visibility
+  const handlePhonePointerOver = () => {
+    if (aboutTooltip) {
+      gsap.to(aboutTooltip, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  };
+
+  const handlePhonePointerOut = () => {
+    if (aboutTooltip) {
+      gsap.to(aboutTooltip, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  }
+
+  // Handle Island tooltip visibility
+  const handleIslandPointerOver = () => {
+    if (serviceTooltip) {
+      gsap.to(serviceTooltip, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  };
+
+  const handleIslandPointerOut = () => {
+    if (serviceTooltip) {
+      gsap.to(serviceTooltip, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  };
+
 
 
   const handlePhonePageTransition = async (e) => {
@@ -95,9 +140,19 @@ function MainpageWithRouting() {
         <EffectComposer sampling={64}>
           <ScrollControls pages={1.0} damping={3.0} smoothTime={0.35}>
             <Suspense fallback={null}>
-              <Le isClicked={isCubeClicked} visible={!isPhoneClicked && !isIslandClicked} onClick={handleCubeClick} />
-              <Phone isPhoneClicked={isPhoneClicked} visible={!isCubeClicked && !isIslandClicked} onClick={handlePhoneClick} />
-              <HomeIsland isIslandClicked={isIslandClicked} visible={!isCubeClicked && !isPhoneClicked}  onClick={handleIslandClick} />
+              <Le isClicked={isCubeClicked} visible={!isPhoneClicked && !isIslandClicked}
+               onClick={handleCubeClick}
+               />
+              <Phone isPhoneClicked={isPhoneClicked} visible={!isCubeClicked && !isIslandClicked}
+               onClick={handlePhoneClick}
+               onPointerOver={handlePhonePointerOver}
+               onPointerOut={handlePhonePointerOut}
+               />
+              <HomeIsland isIslandClicked={isIslandClicked} visible={!isCubeClicked && !isPhoneClicked}
+               onClick={handleIslandClick}
+               onPointerOver={handleIslandPointerOver}
+               onPointerOut={handleIslandPointerOut}
+               />
             </Suspense>
             <HomePage />
             <BuildBrands visible={!isCubeClicked && !isPhoneClicked && !isIslandClicked} />

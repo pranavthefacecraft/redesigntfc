@@ -158,7 +158,7 @@ export default function HomePage() {
 
         <mesh rotation={[0, Math.PI / 3.5, 0]} position={[
           (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? -desktopFactorPositionX - 4.5 : -laptopFactorPositionX - 4.5 )),
-          (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 0.7 : laptopFactorPositionY - 0.7)),
+          (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 0.7 : laptopFactorPositionY - 0.3)),
           (isTablet ? -(cloudsPositionFactorZ - 0.1): (isDesktop ? desktopFactorPositionZ - 8.0 : laptopFactorPositionZ - 8.0))
           ]}
           >
@@ -172,8 +172,8 @@ export default function HomePage() {
         </mesh>
 
         <mesh rotation={[0, Math.PI / 3.5, 0]} position={[
-           (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? desktopFactorPositionX - 6.4 : laptopFactorPositionX - 3.8)),
-           (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 1.0 : laptopFactorPositionY - 0.6)),
+           (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? desktopFactorPositionX - 6.4 : laptopFactorPositionX - 5.1)),
+           (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 1.0 : laptopFactorPositionY - 0.7)),
            (isTablet ? -(cloudsPositionFactorZ - 0.1): (isDesktop ? desktopFactorPositionZ : laptopFactorPositionZ))
            ]}
            >

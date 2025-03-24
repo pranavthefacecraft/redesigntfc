@@ -8,6 +8,8 @@ import { DissolveMaterial } from '../DissolveMaterial';
 
 import { lightpurple_bni } from './CubeMaterial';
 
+const brandTooltip = document.getElementById("brands-tooltip");
+
 export function Le({ visible, ...props }) {
   const group = useRef()
   const { width, height, camera } = useThree();
@@ -68,8 +70,22 @@ export function Le({ visible, ...props }) {
       if (isHovered && !isClicked) {
         actions[names[0]].reset().fadeIn(0.5).play();
         actions[names[0]].timeScale = 0.96;
+        if (brandTooltip) {
+              gsap.to(brandTooltip, {
+                opacity: 1,
+                duration: 0.3,
+                ease: "power2.out",
+              });
+        }
       } else {
         actions[names[0]].fadeOut(0.5);
+        if (brandTooltip) {
+              gsap.to(brandTooltip, {
+                opacity: 0,
+                duration: 0.3,
+                ease: "power2.out",
+              });
+       }
       }
   
   }, [isHovered, actions, names, isClicked]);

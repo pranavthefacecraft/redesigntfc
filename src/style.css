@@ -7,6 +7,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Futura";
+  src: url("../../../public/ProjectPage/Fonts/FuturaCyrillicDemi.ttf"); /* Fix the path */
+}
+
+
 @theme {
   --color-customred: #bf1736;
   --color-custompurple: #b1acf5;
@@ -110,3 +116,17 @@
   background-size: cover;
 }
 
+.tooltip-container {
+  opacity: 0;
+  box-shadow: inset 0px 0px 11px 5px white;
+  padding: 0.9em 1.9em;
+  border-radius: 1.1em;
+  background-color: transparent; /* Ensure the container is transparent */
+}
+
+.tooltip-text {
+  font-family: Futura;
+  font-size: 1.5em;
+  color: #bcb4ff;
+  filter: brightness(0.65) saturate(1.9);
+}
