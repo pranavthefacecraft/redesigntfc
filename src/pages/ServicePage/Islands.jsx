@@ -10,45 +10,45 @@ export function Islands(props) {
   const { nodes, materials, animations } = useGLTF('./ServicePage/Islands.glb');
   const { actions, names } = useAnimations(animations, group);
 
-  // GSAP animation reference
+  
   const scaleAnimation = useRef(null);
 
   useEffect(() => {
-    // Initialize the animation in a paused state
+    
     actions[names[0]].reset().play().paused = true;
 
     // Initialize GSAP animation for scaling
     scaleAnimation.current = gsap.to(group.current.scale, {
-      x: 0.9, // Scale down to 80%
+      x: 0.9, 
       y: 0.9,
       z: 0.9,
-      duration: 1, // Animation duration
-      paused: true, // Start paused
-      ease: 'power2.inOut', // Smooth easing
+      duration: 1,
+      paused: true, 
+      ease: 'power2.inOut',
     });
   }, [actions, names]);
 
   useFrame(() => {
-    // Define the scroll range (e.g., from 0.25 to 0.75 of the total scrollable area)
+    
     const scrollRangeStart = 0.15;
     const scrollRangeEnd = 0.50;
 
     const offset = scroll.offset;
     const animationTime = actions[names[0]].getClip().duration * offset * 0.90;
     actions[names[0]].time = animationTime;
-    scaleAnimation.current.progress(animationTime * 0.2); // Set GSAP animation progress
+    scaleAnimation.current.progress(animationTime * 0.2); 
 
     // Get the normalized scroll value within the defined range
     const scrollRange = scroll.range(scrollRangeStart, scrollRangeEnd - scrollRangeStart);
 
     // Interpolate the y and z displacement based on the scroll range
-    const yDisplacement = scrollRange * height * 0.66; // Adjust multiplier for y movement
-    const zDisplacement = scrollRange * height * 0.1; // Adjust multiplier for z movement
+    const yDisplacement = scrollRange * height * 0.66; 
+    const zDisplacement = scrollRange * height * 0.1; 
 
     // Update the model's position
     if (group.current) {
-      group.current.position.y = -height * 0.75 + yDisplacement; // Adjust initial y position
-      group.current.position.z = zDisplacement; // Adjust z position
+      group.current.position.y = -height * 0.75 + yDisplacement;
+      group.current.position.z = zDisplacement;
     }
 
  
