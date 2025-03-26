@@ -59,7 +59,7 @@ const Tanda = () => {
 
   return (
     <>
-    <PageHeader />
+    
       <div ref={container} className="w-full overflow-hidden">
         <div className="absolute top-0 left-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh]">
           <div className="absolute inset-0 opacity-100">

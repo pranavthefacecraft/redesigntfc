@@ -2,13 +2,15 @@ import './aboutus.css';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, Suspense } from 'react';
 import { Canvas, useThree, useFrame } from '@react-three/fiber';
-import { useScroll, Scroll, ScrollControls } from '@react-three/drei';
+import { useScroll, Scroll, ScrollControls, Text } from '@react-three/drei';
 import gsap from 'gsap';
 import { Planefour, Planefive, Planehero } from './ThreeDComponents';
 import ImageSlider from './ImageSlider';
 
 import Scene from './ModelSlider';
-import PageFooter from '../rafw/PageFooter';
+import PageFooter from './Footer';
+import HeroCubes from './HeroSection/Herocubes';
+import { App } from './HeroSection/Heroballs';
 
 const texts = [
   { first: "Digital Branding", second: "Agency" },
@@ -73,16 +75,22 @@ export default function AboutusPage() {
             camera={{ position: [0, 0, 20], fov: 32, near: 0.1, far: 1000 }}
             dpr={[1, 2]}
           >
-            <ScrollControls damping={0.5} pages={6.4}>
+            <ScrollControls damping={0.5} pages={7.4}>
+
               <Scroll>
                 <Videos />
               </Scroll>
+
+              <Scroll>
+                <HeroCubes/>
+              </Scroll>
+
+              <Text position={[0.0,1.0,1.0]} font='./ProjectPage/Fonts/FuturaCyrillicBold.ttf' fontSize={2.4} scale={[0.9,1.1,1]}  anchorX="center" anchorY="middle" >A Brand Focused</Text>
+              <Text position={[0.0,-1.5,1.0]} font='./ProjectPage/Fonts/FuturaCyrillicBold.ttf' fontSize={2.4} scale={[0.9,1.1,1]}  anchorX="center" anchorY="middle">Digital Partner</Text>
+
               <Scroll html>
             
                <div className="sectionhero absolute top-0 h-[200vh] w-screen pointer-events-none">
-                 <div className="absolute top-[1.4em] left-[0.1em] text-white text-center leading-[1.0em] text-[9em] w-screen">
-                  A Brand Focused <br /> Digital Partner
-                 </div>
                </div>
 
                <div className="sectionone bg-white absolute top-[200vh] h-[100vh] w-screen pointer-events-none">
@@ -152,10 +160,16 @@ export default function AboutusPage() {
                         </div>
                   </div>
                </div>
+
+               <div className="absolute top-[640vh] bg-black h-[100vh] w-screen">
+                  {/* <PageFooter/> */}
+               </div>
            
               </Scroll>
               <Scroll>
                 <Planefour />
+
+
                 <Planehero />
               </Scroll>
 
@@ -164,12 +178,16 @@ export default function AboutusPage() {
                 <Scene/>
               
               </Scroll>
+
               
             </ScrollControls>
            
           </Canvas>
+          
         </Suspense>
       </div>
+
+      
     </motion.div>
   );
 }

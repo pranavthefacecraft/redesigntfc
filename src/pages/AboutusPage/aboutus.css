@@ -65,6 +65,14 @@
     text-align: left;  
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+.text {
+    font-size: 4rem;
+    font-family: Futura;
+    line-height: 1.2em;
+    text-align: left;  
+    z-index: 1;
+}
    
 
 
