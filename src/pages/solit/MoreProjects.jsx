@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap/all";
 import { useRef } from "react";
+import CubeCard from "../common/CubeCard/CubeCard";
 
 const ProjectCard = ({ name, image }) => {
   const expandTimeline = useRef();
@@ -62,11 +63,51 @@ const ProjectCard = ({ name, image }) => {
 
 const MoreProjects = () => {
   return (
-    <div className="flex w-full flex-col gap-8 md:flex-row">
-      <ProjectCard name="Tanda" image="solit/row1.jpg" />
-      <ProjectCard name="BHMS" image="solit/row2.jpg" />
-      <ProjectCard name="Project3" image="solit/row3.jpg" />
-    </div>
+    <>
+      <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-0 xl:gap-y-20 xl:pb-0">
+        <div className="flex w-full flex-col gap-4 md:flex-row lg:gap-8 xl:gap-16">
+          <CubeCard
+            title="Tanda"
+            images={[
+              "tanda/main.png",
+              // "tanda/tab-bg-v1.png",
+              // "tanda/tab-bg-v2.png",
+              // "tanda/laptop.png",
+              // "tanda/section-2a-2048x1365.png",
+              // "tanda/sketch-after.png",
+            ]}
+            color="#b1acf5"
+          />
+
+          <CubeCard title="Solit" images={["solit/main.png"]} color="#b1acf5" />
+          <CubeCard
+            title="Towork"
+            images={["solit/icon.png"]}
+            color="#b1acf5"
+          />
+        </div>
+
+        <div className="flex w-full flex-col gap-0 md:flex-row lg:gap-0 xl:gap-0">
+          <CubeCard
+            title="Title1"
+            images={["solit/row1.jpg"]}
+            color="#b1acf5"
+          />
+
+          <CubeCard
+            title="Title2"
+            images={["tanda/tab-bg-v1.png"]}
+            color="#b1acf5"
+          />
+          <CubeCard
+            title="Title3"
+            images={["tanda/laptop.png"]}
+            color="#b1acf5"
+          />
+        </div>
+      </div>
+    </>
   );
 };
+
 export default MoreProjects;
