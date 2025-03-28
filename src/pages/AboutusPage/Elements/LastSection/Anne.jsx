@@ -1,11 +1,17 @@
 
 import React, { useRef, useState, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useThree } from '@react-three/fiber'
 
 export function Anne(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./AboutusPage/Models/standing.glb')
   const { actions, names } = useAnimations(animations, group)
+  const {width, height, viewport} = useThree((state) => state.viewport) 
+  
+  const isMobile = width < 5.224;
+  const isDesktop = width > 13.061;
+
   
 
   useEffect(() => {
@@ -21,7 +27,7 @@ export function Anne(props) {
     <group ref={group}
     {...props}
     dispose={null}
-    position={[-1.5,-13.8,2]}
+    position={[ isDesktop ? -1.5 : -1.5,isDesktop ? -10.8: -13.8,isDesktop ? 2: 2 ]}
     scale={2.0}
     >
      <group name="Scene">
