@@ -166,7 +166,6 @@ function MainpageWithRouting() {
 // App Component
 function App() {
   const location = useLocation();
-
   return (
     <>
       <AnimatePresence mode="wait">

@@ -1,3 +1,4 @@
+import * as THREE from 'three'
 import React, { useRef, useEffect, Suspense } from 'react'
 import { useGLTF, useAnimations, Html } from '@react-three/drei'
 import { gsap } from 'gsap'
@@ -11,8 +12,12 @@ gsap.registerPlugin(ScrollTrigger)
 export function Sean(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./AboutusPage/Models/sean.glb')
- 
 
+  const texture = new THREE.TextureLoader().load('./AboutusPage/Images/demo.png');
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.flipY = true;
+
+  const lightpurplematerial = new THREE.MeshBasicMaterial({ map: texture });
 
 
   return (
@@ -119,18 +124,18 @@ export function Sean(props) {
           castShadow
           receiveShadow
           geometry={nodes.Screen.geometry}
-          material={materials['Mat.7']}
+          material={lightpurplematerial}
           position={[-0.087, 0.799, -1.377]}
           rotation={[0, 0.018, Math.PI / 2]}
           scale={[2.015, 0.103, 3.426]}
         >
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <Html
           distanceFactor={1.17}
           >
             <iframe className='w-[125em] h-[73em] fixed top-[-36.5em] left-[-62.8em]' src='https://thefacecraft.com/en/home/'/>
           </Html>
-        </Suspense>    
+        </Suspense>     */}
           </mesh>
       </group>
     </group>
