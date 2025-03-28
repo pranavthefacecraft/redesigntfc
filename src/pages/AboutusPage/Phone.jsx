@@ -13,10 +13,14 @@ export function Phone({ visible, ...props }) {
   const planeref = useRef()
   const dissolveref = useRef();
   const portalMaterialRef = useRef(); // Reference for MeshPortalMaterial
-  const { camera } = useThree()
   const timelineref = useRef();
   const scroll = useScroll();
   const { nodes, materials } = useGLTF('./AboutusPage/Models/Phone.glb')
+  const { camera } = useThree();
+  const {width, height, viewport} = useThree((state) => state.viewport) 
+
+  const isMobile = width < 5.224;
+  const isDesktop = width > 13.061;
 
   const letters = document.querySelectorAll('.ProjectTitle span');
   const isClicked = props.isPhoneClicked
@@ -155,11 +159,11 @@ export function Phone({ visible, ...props }) {
       ref={group}
       dispose={null}
       rotation={[-0.5, 0.2, 0.3]}
-      position={[-4.0, -1.0, -3]}
+      position={[ isDesktop ? -3.6 : -4.0,isDesktop ? -0.4: -1.0,isDesktop ? -3: -3.2 ]}
     >
       <group name="Plane" scale={[1, 1, 0.261]}>
         <mesh
-          ref={planeref} // Reference to the Plane001 mesh
+          ref={planeref} 
           name="Plane001"
           castShadow
           receiveShadow

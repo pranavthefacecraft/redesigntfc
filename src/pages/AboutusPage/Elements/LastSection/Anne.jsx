@@ -4,102 +4,91 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function Anne(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./AboutusPage/Models/WAVING.glb')
+  const { nodes, materials, animations } = useGLTF('./AboutusPage/Models/standing.glb')
   const { actions, names } = useAnimations(animations, group)
-  const [isHovered, setIsHovered] = useState(false);
+  
 
   useEffect(() => {
 
     actions[names[0]].reset().fadeIn(0.5).play();
     actions[names[0]].timeScale = 0.96;
      
-    actions[names[1]].reset().fadeIn(0.5).play();
-    actions[names[1]].timeScale = 0.96;
-    
-  }, [isHovered, actions, names]);
+ 
+
+  }, [actions, names]);
 
   return (
     <group ref={group}
     {...props}
     dispose={null}
-    position={[-1.7,-13.8,2]}
-    scale={1.0}
-    onPointerOver={() => setIsHovered(true)}
-    onPointerOut={() => setIsHovered(false)}
+    position={[-1.5,-13.8,2]}
+    scale={2.0}
     >
-      <group name="Scene">
-        <group name="SEAN">
-          <skinnedMesh
-            name="BODY"
-            geometry={nodes.BODY.geometry}
-            material={materials['SSS Skin Shader']}
-            skeleton={nodes.BODY.skeleton}
-          >
-            <meshStandardMaterial color={'#FFDDAB'}/>
-            </skinnedMesh>
-          <skinnedMesh
-            name="Button_1"
-            geometry={nodes.Button_1.geometry}
-            material={materials['Top.001']}
-            skeleton={nodes.Button_1.skeleton}
-          >
-            <meshStandardMaterial color={'black'}/>
-            </skinnedMesh>
-          <skinnedMesh
-            name="Button_2"
-            geometry={nodes.Button_2.geometry}
-            material={materials['Top.001']}
-            skeleton={nodes.Button_2.skeleton}
-          >
-             <meshStandardMaterial color={'black'}/>
-            </skinnedMesh>
-          <group name="FC_Web_Characters" />
-          <skinnedMesh
-            name="FOOT_L"
-            geometry={nodes.FOOT_L.geometry}
-            material={materials.Shoes}
-            skeleton={nodes.FOOT_L.skeleton}
-          >
-             <meshStandardMaterial color={'black'}/>
-            </skinnedMesh>
-          <skinnedMesh
-            name="FOOT_R"
-            geometry={nodes.FOOT_R.geometry}
-            material={materials.Shoes}
-            skeleton={nodes.FOOT_R.skeleton}
-          >
-             <meshStandardMaterial color={'black'}/>
-            </skinnedMesh>
-          <skinnedMesh
-            name="Pants"
-            geometry={nodes.Pants.geometry}
-            material={materials.Pants}
-            skeleton={nodes.Pants.skeleton}
-          >
-             <meshStandardMaterial color={'#DDA853'}/>
-            </skinnedMesh>
-          <skinnedMesh
-            name="TOP_Shirt"
-            geometry={nodes.TOP_Shirt.geometry}
-            material={materials.Top}
-            skeleton={nodes.TOP_Shirt.skeleton}
-          >
-            <meshStandardMaterial color={'#210F37'}/>
-            </skinnedMesh>
-          <primitive object={nodes.root} />
-          <primitive object={nodes['MCH-torsoparent']} />
-          <primitive object={nodes['MCH-hand_ikparentL']} />
-          <primitive object={nodes['MCH-upper_arm_ik_targetparentL']} />
-          <primitive object={nodes['MCH-hand_ikparentR']} />
-          <primitive object={nodes['MCH-upper_arm_ik_targetparentR']} />
-          <primitive object={nodes['MCH-foot_ikparentL']} />
-          <primitive object={nodes['MCH-thigh_ik_targetparentL']} />
-          <primitive object={nodes['MCH-foot_ikparentR']} />
-          <primitive object={nodes['MCH-thigh_ik_targetparentR']} />
+     <group name="Scene">
+        <group name="rig_CharRoot" scale={0.005}>
+          <group name="bip" position={[0, 92.405, -2.69]} rotation={[Math.PI, -1.551, Math.PI]}>
+            <group name="lpMaleG">
+              <skinnedMesh
+                name="Mesh"
+                geometry={nodes.Mesh.geometry}
+                material={materials.White}
+                skeleton={nodes.Mesh.skeleton}
+              >
+                <meshStandardMaterial color={'#FFB4A2'}/>
+                </skinnedMesh>
+              <skinnedMesh
+                name="Mesh_1"
+                geometry={nodes.Mesh_1.geometry}
+                material={materials.Purple}
+                skeleton={nodes.Mesh_1.skeleton}
+              >
+                <meshStandardMaterial color={'#DCA06D'}/>
+                </skinnedMesh>
+              <skinnedMesh
+                name="Mesh_2"
+                geometry={nodes.Mesh_2.geometry}
+                material={materials.White}
+                skeleton={nodes.Mesh_2.skeleton}
+              >
+                <meshStandardMaterial color={'#FFB4A2'}/>
+                </skinnedMesh>
+              <skinnedMesh
+                name="Mesh_3"
+                geometry={nodes.Mesh_3.geometry}
+                material={materials.White}
+                skeleton={nodes.Mesh_3.skeleton}
+              >
+                <meshStandardMaterial color={'#FFB4A2'}/>
+                </skinnedMesh>
+              <skinnedMesh
+                name="Mesh_4"
+                geometry={nodes.Mesh_4.geometry}
+                material={materials.Shirt}
+                skeleton={nodes.Mesh_4.skeleton}
+              />
+              <skinnedMesh
+                name="Mesh_5"
+                geometry={nodes.Mesh_5.geometry}
+                material={materials.Skin}
+                skeleton={nodes.Mesh_5.skeleton}
+              >
+                 <meshStandardMaterial color={'#FFB4A2'}/>
+                </skinnedMesh>
+              <skinnedMesh
+                name="Mesh_6"
+                geometry={nodes.Mesh_6.geometry}
+                material={materials.Purple}
+                skeleton={nodes.Mesh_6.skeleton}
+              >
+                <meshStandardMaterial color={'#3B3030'}/> 
+                </skinnedMesh>
+            </group>
+            <primitive object={nodes.bip_Pelvis} />
+          </group>
         </group>
       </group>
     </group>
   )
 }
 
-useGLTF.preload('./AboutusPage/Models/WAVING.glb')
+useGLTF.preload('./AboutusPage/Models/standing.glb')

@@ -75,8 +75,8 @@ function Scene() {
 
   return (
     <group ref={cameraGroup}>
-      <ambientLight intensity={1.5} />
-      <directionalLight color="#ffffff" intensity={2} position={[1, 1, 0]} />
+      <ambientLight intensity={0.1} />
+      <directionalLight color="#ffffff" intensity={6} position={[-5, 2, -4]} />
       <Suspense fallback={null}>
       <HeroCubes/>
       </Suspense>

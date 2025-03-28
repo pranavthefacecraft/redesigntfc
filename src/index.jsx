@@ -13,6 +13,7 @@ import gsap from "gsap";
 import Solit from "./pages/solit/Solit.jsx";
 import Tanda from "./pages/Tanda/Tanda.jsx";
 import Rafw from "./pages/rafw/Rafw.jsx";
+import ContactUs from './pages/ContactusPage/Contactus.jsx';
 import HomePage from "./HomePage/HomePage";
 import ProjectPage from './pages/ProjectPage/ProjectPage.jsx';
 // import AboutusPage from "./pages/AboutusPage/AboutusPage.jsx";
@@ -42,9 +43,9 @@ function MainpageWithRouting() {
     e.stopPropagation();
     setIsCubeClicked(true);
 
-    setTimeout(() => {
-      navigate("/ProjectPage");
-    }, 6500);
+    // setTimeout(() => {
+    //   navigate("/ProjectPage");
+    // }, 6500);
   };
 
   const handlePhoneClick = (e) => {
@@ -60,9 +61,9 @@ function MainpageWithRouting() {
     e.stopPropagation();
     setIsIslandClicked(true);
 
-    setTimeout(() => {
-      navigate("/ServicePage");
-    }, 10000);
+    // setTimeout(() => {
+    //   navigate("/ServicePage");
+    // }, 10000);
   };
 
   // Handle Phone tooltip visibility
@@ -165,7 +166,6 @@ function MainpageWithRouting() {
 // App Component
 function App() {
   const location = useLocation();
-
   return (
     <>
       <AnimatePresence mode="wait">
@@ -220,6 +220,8 @@ function App() {
           <Route path="/solit" element={<Solit />} />
           <Route path="/Tanda" element={<Tanda />} />
           <Route path="/Rafw" element={<Rafw />} />
+          <Route path="/Contactus" element={<ContactUs/>} />
+
         </Routes>
       </AnimatePresence>
     </>

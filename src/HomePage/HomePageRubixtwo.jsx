@@ -12,10 +12,11 @@ const brandTooltip = document.getElementById("brands-tooltip");
 
 export function Le({ visible, ...props }) {
   const group = useRef()
-  const { width, height, camera } = useThree();
+  const { camera } = useThree();
   const { nodes, materials, animations } = useGLTF('./Homepage/Models/uchalo.glb')
   const { actions, names } = useAnimations(animations, group);
   const [isHovered, setIsHovered] = useState(false);
+  const {width, height, viewport} = useThree((state) => state.viewport)
 
   const timelineref = useRef();
   const scroll = useScroll();
@@ -162,7 +163,7 @@ export function Le({ visible, ...props }) {
      dispose={null}
      scale={ isDesktop? 0.5: 0.46 }
      rotation={[ -Math.PI/50,Math.PI/52,-Math.PI/11 ]}
-     position={[ isDesktop ? -0.2 : -1.40,isDesktop ? -1.56: -1.93,isDesktop ? -4.7 : -4.7 ]}
+     position={[ isDesktop ? -0.2 : -1.0,isDesktop ? -1.56: -1.7,isDesktop ? -4.7 : -4.2 ]}
 
      onPointerOver={() => setIsHovered(true)}
      onPointerOut={() => setIsHovered(false)} 

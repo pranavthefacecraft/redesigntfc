@@ -9,7 +9,7 @@ import { useScroll } from '@react-three/drei';
 
 export default function HomePage() {
   const group = useRef();
-  const { width, height } = useThree((state) => state.viewport);
+  const { width, height, viewport } = useThree((state) => state.viewport);
 
   const grouponeref = useRef();
   const grouptworef = useRef();
@@ -142,8 +142,8 @@ export default function HomePage() {
 
       <group ref={grouptworef} position={[0,-height * 1.5,0]}>
         <mesh rotation={[-Math.PI / 24, Math.PI / 3.5, 0]} position={[
-          (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? -desktopFactorPositionX - 4.0 : -laptopFactorPositionX - 4.0)),
-          (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 2.0 : laptopFactorPositionY - 2.0)),
+          (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? -desktopFactorPositionX - 1.3 : -laptopFactorPositionX - 4.0)),
+          (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 2.1 : laptopFactorPositionY - 2.0)),
           (isTablet ? -(cloudsPositionFactorZ - 0.1): (isDesktop ? desktopFactorPositionZ - 13.0 : laptopFactorPositionZ - 13.0))
            ]}
            >
@@ -157,8 +157,8 @@ export default function HomePage() {
         </mesh>
 
         <mesh rotation={[0, Math.PI / 3.5, 0]} position={[
-          (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? -desktopFactorPositionX - 4.5 : -laptopFactorPositionX - 4.5 )),
-          (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 0.7 : laptopFactorPositionY - 0.3)),
+          (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? -desktopFactorPositionX - 3.8 : -laptopFactorPositionX - 4.5 )),
+          (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY + 0.3  : laptopFactorPositionY - 0.3)),
           (isTablet ? -(cloudsPositionFactorZ - 0.1): (isDesktop ? desktopFactorPositionZ - 8.0 : laptopFactorPositionZ - 8.0))
           ]}
           >
@@ -172,8 +172,8 @@ export default function HomePage() {
         </mesh>
 
         <mesh rotation={[0, Math.PI / 3.5, 0]} position={[
-           (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? desktopFactorPositionX - 6.4 : laptopFactorPositionX - 5.1)),
-           (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 1.0 : laptopFactorPositionY - 0.7)),
+           (isTablet ? -(cloudsPositionFactorX - 0.1): (isDesktop ? desktopFactorPositionX - 7.6 : laptopFactorPositionX - 5.1)),
+           (isTablet ? -(cloudsPositionFactorY - 0.1): (isDesktop ? desktopFactorPositionY - 1.5 : laptopFactorPositionY - 0.7)),
            (isTablet ? -(cloudsPositionFactorZ - 0.1): (isDesktop ? desktopFactorPositionZ : laptopFactorPositionZ))
            ]}
            >

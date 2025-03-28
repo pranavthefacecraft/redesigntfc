@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Futura";
+    src: url("../../../public/ProjectPage/Fonts/FuturaCyrillicExtraBold.ttf"); /* Fix the path */
+}
+
+
+@font-face {
+    font-family: "Monserrat";
+    src: url("../../../public/ProjectPage/Fonts/Montserrat-Medium.ttf"); /* Fix the path */
+}
+
+
+.title {
+   font-family: Futura;
+}
+
+.description {
+    font-family: Monserrat;
+    
+}
+
+
+/* .text-reveal {
+    position: absolute;
+    z-index: 0; 
+    pointer-events: none;
+    left: 2.9em;
+    top: 0.4em;
+    font-size: 6.9rem; 
+    font-family: Futura;
+    display: block;
+    overflow: hidden;
+  }
+  
+.word {
+    display: inline-block;
+    transform: translateY(78%);
+    opacity: 1;
+    letter-spacing: -0.04em; 
+}
+
+.text-description {
+    position: absolute;
+    left: 60em;
+    top: 15em;
+    font-size: 0.9rem; 
+    font-family: poppingHomePage;
+    letter-spacing: -0.04em;
+    line-height: 1.4em;
+    word-spacing: 0.3em;
+    font-weight: lighter; 
+    color: black;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.contactuswrapper {
+        background-image: url('../../../public/Homepage/Images/BG-new.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+} */
