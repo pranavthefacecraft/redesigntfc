@@ -33,13 +33,13 @@ const ImageSlider = () => {
 
   return (
     <Suspense>
-    <div className="w-screen h-[57vh] flex items-center justify-center absolute top-[27em]">
-    <div className="w-full max-w-[1800px] px-4 mr-5"> {/* Adjust max-width as needed */}
+    <div className="w-screen h-[57vh] flex py-[2em] relative top-[3em]">
+    <div className="w-full max-w-[1800px] px-0 mr-5"> {/* Adjust max-width as needed */}
       <Slider {...settings}>
         {data.map((d, index) => (
           <div className='flex items-center justify-center' key={index}>
             <div className='rounded-xl mx-[3em]'>
-              <img src={d.img} alt={`Slide ${index}`} className='h-[25em] w-full transition-all duration-700 rounded-lg object-cover'/>
+              <img src={d.img} alt={`Slide ${index}`} className='h-[20em] w-full transition-all duration-700 rounded-lg object-cover'/>
             </div>
           </div>
         ))}

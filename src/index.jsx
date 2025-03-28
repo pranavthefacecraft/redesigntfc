@@ -15,7 +15,8 @@ import Tanda from "./pages/Tanda/Tanda.jsx";
 import Rafw from "./pages/rafw/Rafw.jsx";
 import HomePage from "./HomePage/HomePage";
 import ProjectPage from './pages/ProjectPage/ProjectPage.jsx';
-import AboutusPage from "./pages/AboutusPage/AboutusPage.jsx";
+// import AboutusPage from "./pages/AboutusPage/AboutusPage.jsx";
+import AboutusPage from './pages/AboutusPage/Aboutuspagetwo.jsx';
 import ServicePage from "./pages/ServicePage/ServicePage.jsx";
 
 // 3D Components
@@ -28,24 +29,6 @@ import { HomeIsland } from "./pages/ServicePage/HomeIsland.jsx"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const aboutTooltip = document.getElementById("about-tooltip");
 const serviceTooltip = document.getElementById("services-tooltip");
-
-const buttonStyle = {
-  position: 'fixed',
-  bottom: '20px',
-  right: '20px',
-  zIndex: 1000,
-  padding: '10px 20px',
-  background: '#ffffff',
-  color: '#000000',
-  border: 'none',
-  borderRadius: '4px',
-  cursor: 'pointer',
-  fontSize: '16px',
-  transition: 'all 0.3s ease',
-  ':hover': {
-    background: '#dddddd'
-  }
-};
 
 
 // MainpageWithRouting Component
@@ -145,12 +128,6 @@ function MainpageWithRouting() {
       {isPhoneClicked && (
         <div className="AboutusPagebox" onClick={handlePhonePageTransition}></div>
       )}
-      <button 
-      onClick={() => navigate('/solit')}
-      style={buttonStyle}
-      >
-      Inner Pages
-      </button>
       <Canvas
         shadows
         orthographic
@@ -177,7 +154,7 @@ function MainpageWithRouting() {
                />
             </Suspense>
             <HomePage />
-            <BuildBrands visible={!isCubeClicked && !isPhoneClicked && !isIslandClicked} />
+            <BuildBrands visible={!isCubeClicked && !isPhoneClicked && !isIslandClicked}/>
           </ScrollControls>
         </EffectComposer>
       </Canvas>

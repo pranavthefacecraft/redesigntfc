@@ -14,9 +14,6 @@ export default function AboutusPortal() {
 
     <mesh position={[0,2.7,0]} rotation={[0,0,0]}>
         <Text position={[0.1,0.0,0.87]} font='./ProjectPage/Fonts/FuturaCyrillicBold.ttf' fontSize={0.55} anchorX="center" anchorY="middle">Click me</Text>
-        <boxGeometry args={[1.5,1.5,1.5]}/>
-        <Outlines thickness={3.05} color="black" />
-        <meshToonMaterial color={'#837bfb'}/>
     </mesh>
 
     <ambientLight intensity={3}/>

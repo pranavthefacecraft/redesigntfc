@@ -67,7 +67,8 @@ export default function AboutusPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 2 }}
     >
-      <div className="wrapper bg-white w-screen h-screen">
+      <div className="wrapper bg-black w-screen h-screen z-[1]">
+      <div className="hero w-screen h-screen bg-black z-[0]"></div>  
         <Suspense fallback={<div>Loading...</div>}>
           <Canvas
             shadows
@@ -89,9 +90,7 @@ export default function AboutusPage() {
               <Text position={[0.0,-1.5,1.0]} font='./ProjectPage/Fonts/FuturaCyrillicBold.ttf' fontSize={2.4} scale={[0.9,1.1,1]}  anchorX="center" anchorY="middle">Digital Partner</Text>
 
               <Scroll html>
-            
-               <div className="sectionhero absolute top-0 h-[200vh] w-screen pointer-events-none">
-               </div>
+          
 
                <div className="sectionone bg-white absolute top-[200vh] h-[100vh] w-screen pointer-events-none">
                  <div className="absolute top-[0.6em] left-[3em] leading-[1.1em] font-futura text-[4.5em] w-screen">
@@ -167,10 +166,10 @@ export default function AboutusPage() {
            
               </Scroll>
               <Scroll>
-                <Planefour />
+                {/* <Planefour />
 
 
-                <Planehero />
+                <Planehero /> */}
               </Scroll>
 
               <Scroll>
@@ -186,8 +185,6 @@ export default function AboutusPage() {
           
         </Suspense>
       </div>
-
-      
     </motion.div>
   );
 }
