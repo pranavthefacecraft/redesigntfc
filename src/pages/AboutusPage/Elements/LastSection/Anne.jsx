@@ -6,7 +6,7 @@ export function Anne(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./AboutusPage/Models/WAVING.glb')
   const { actions, names } = useAnimations(animations, group)
-  const [isHovered, setIsHovered] = useState(false);
+  
 
   useEffect(() => {
 
@@ -16,7 +16,7 @@ export function Anne(props) {
     actions[names[1]].reset().fadeIn(0.5).play();
     actions[names[1]].timeScale = 0.96;
     
-  }, [isHovered, actions, names]);
+  }, [actions, names]);
 
   return (
     <group ref={group}
@@ -24,8 +24,6 @@ export function Anne(props) {
     dispose={null}
     position={[-1.7,-13.8,2]}
     scale={1.0}
-    onPointerOver={() => setIsHovered(true)}
-    onPointerOut={() => setIsHovered(false)}
     >
       <group name="Scene">
         <group name="SEAN">
