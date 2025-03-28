@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import React, { useRef, useEffect, Suspense } from 'react'
 import { useGLTF, useAnimations, Html } from '@react-three/drei'
+import { useThree } from '@react-three/fiber'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -12,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 export function Sean(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./AboutusPage/Models/sean.glb')
+  const {width, height, viewport} = useThree((state) => state.viewport) 
 
   const texture = new THREE.TextureLoader().load('./AboutusPage/Images/demo.png');
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -19,9 +21,14 @@ export function Sean(props) {
 
   const lightpurplematerial = new THREE.MeshBasicMaterial({ map: texture });
 
+  const isMobile = width < 5.224;
+  const isDesktop = width > 13.061;
+
 
   return (
-    <group ref={group} {...props} dispose={null} rotation={[0,-Math.PI/2,0]} position={[-1.3,-12.8,0]} >
+    <group ref={group} {...props} dispose={null} rotation={[0,-Math.PI/2,0]}
+     position={[ isDesktop ? -1.3 : -1.3,isDesktop ? -9.8: -12.8,isDesktop ? 0: 0 ]}
+      >
       <group name="Scene">
         <mesh
           name="Island_big"
